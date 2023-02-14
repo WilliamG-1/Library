@@ -36,16 +36,17 @@
             <fieldset>
                 <h2>Create New Book!</h2>
                 <label for="getTitle">Title: </label>
-                <input type="text" name="Title" id="getTitle">
+                <input type="text" name="Title" id="getTitle" required>
 
                 <label for="getTitle">Author: </label>
-                <input type="text" name="Author" id="getAuthor">
+                <input type="text" name="Author" id="getAuthor" required>
 
-                <label for="getPages">Number of Pages: </label>
-                <input type="number" name="Pages" id="getPages" min="1">
+                <label for="getPages">Pages: </label>
+                <input type="number" name="Pages" id="getPages" min="1" required>
 
-                <label for="getReadStatus">Read?: </label>
-                <input type="text" name="ReadStatus" id="getReadStatus">
+                <label for="getReadStatus">Read: </label>
+                <input type="checkbox" name="ReadStatus" id="getReadStatus">
+                <button type="submit" name="addBook" id="submitBook">Add Book</button>
             </fieldset>
         </form>
     </div>
