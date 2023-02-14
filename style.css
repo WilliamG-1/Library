@@ -6,7 +6,7 @@
 
 body{
     min-height: 100vh;
-    background-color: rebeccapurple;
+    background-color: gray;
 }
 
 .header {
@@ -57,6 +57,7 @@ main.bookshelf{
     justify-content: space-around;
 }
 .readStatus{
+    background-color: transparent;
     font-size: 1.2em;
     display: flex;
     justify-content: center;
@@ -76,3 +77,23 @@ main.bookshelf{
 .read{
     background-color: rgb(23, 184, 23);
 }
+
+.formContainer{
+    width: 80vw;
+    margin: auto;
+}
+fieldset{
+    display: grid;
+    grid-template: 2fr repeat(4, 1fr) / 1fr 3fr;
+    gap: 10px;
+}
+fieldset h2{
+    margin: 5px;
+    grid-column: 1 / 3;
+    justify-self: center;
+}
+fieldset label{
+    font-size: 1.2rem;
+    justify-self: center;
+}
+

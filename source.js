@@ -1,3 +1,8 @@
+const readStatusButton = document.querySelector(".readStatus");
+readStatusButton.addEventListener('click', ()=>{
+    let vari = prompt("Enter something");
+    console.log(vari);
+})
 let myLibrary = []; // Initialize empty array of books
 
 function Book(title, author, pages, readStatus) {
@@ -8,5 +13,7 @@ function Book(title, author, pages, readStatus) {
 };
 
 function addBookToLibrary(){
-     
+    
 };
+
+addBookToLibrary();

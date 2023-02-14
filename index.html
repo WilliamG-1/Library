@@ -4,11 +4,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Cool Library</title>
     <link rel="stylesheet" href="style.css">
     <script src="source.js" defer></script>
 </head>
 <body>
+    <div class="formContainer">
+        <form action="collectBookData" method="get" class="bookInfo">
+            <fieldset>
+                <h2>Create New Book!</h2>
+                <label for="getTitle">Title: </label>
+                <input type="text" name="Title" id="getTitle">
+
+                <label for="getTitle">Author: </label>
+                <input type="text" name="Author" id="getAuthor">
+
+                <label for="getPages">Number of Pages: </label>
+                <input type="number" name="Pages" id="getPages" min="1">
+
+                <label for="getReadStatus">Read?: </label>
+                <input type="text" name="ReadStatus" id="getReadStatus">
+            </fieldset>
+        </form>
+    </div>
     <div class="header">
         <div class="logo"></div>
         <h1>Library</h1>
@@ -21,7 +39,7 @@
             <div class="author">By: </div>
 
             <div class="footer">
-                <div class="readStatus read">Unread</div>
+                <button type="button" class="readStatus"></button>
                 <div class="pages">320</div>
             </div>
             
@@ -32,7 +50,7 @@
             <div class="author">By: </div>
             
             <div class="footer">
-                <div class="readStatus"></div>
+                <button type="button" class="readStatus"></button>
                 <div class="pages"></div>
             </div>
         </div>
@@ -43,7 +61,7 @@
             <div class="author">By: </div>
             
             <div class="footer">
-                <div class="readStatus"></div>
+                <button type="button" class="readStatus"></button>
                 <div class="pages"></div>
             </div>
         </div>
@@ -53,7 +71,7 @@
             <div class="author">By: </div>
             
             <div class="footer">
-                <div class="readStatus"></div>
+                <button type="button" class="readStatus"></button>
                 <div class="pages"></div>
             </div>
         </div>
@@ -63,7 +81,7 @@
             <div class="author">By: </div>
             
             <div class="footer">
-                <div class="readStatus"></div>
+                <button type="button" class="readStatus"></button>
                 <div class="pages"></div>
             </div>
         </div>
@@ -73,7 +91,7 @@
             <div class="author">By: </div>
             
             <div class="footer">
-                <div class="readStatus"></div>
+                <button type="button" class="readStatus"></button>
                 <div class="pages"></div>
             </div>
         </div>
@@ -83,7 +101,7 @@
             <div class="author">By: </div>
             
             <div class="footer">
-                <div class="readStatus"></div>
+                <button type="button" class="readStatus"></button>
                 <div class="pages"></div>
             </div>
         </div>
