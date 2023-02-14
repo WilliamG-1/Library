@@ -1,11 +1,20 @@
 const content = document.querySelector(".content");
 const readStatusButton = document.querySelector(".readStatus");
 const formContainer = document.querySelector(".formContainer");
-
-
+let visible = false;
+function toggleVisibility(){
+    visible = !visible;
+}
 readStatusButton.addEventListener('click', ()=>{
     content.classList.add("darken");
-    giformContainer.classList.add("visible");
+    formContainer.classList.add("visible");
+    setTimeout(toggleVisibility, 100);
+});
+content.addEventListener('click', ()=>{
+
+    if (visible){
+        alert("hi");
+    }
 });
 let myLibrary = []; // Initialize empty array of books
 
