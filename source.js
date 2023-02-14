@@ -1,6 +1,6 @@
 const content = document.querySelector(".content");
 const bookShelf = document.querySelector(".bookshelf");
-const readStatusButton = document.querySelector(".readStatus");
+//const readStatusButton = document.querySelector(".readStatus");
 const formContainer = document.querySelector(".formContainer");
 const submitButton = document.querySelector("#submitBook");
 
@@ -18,6 +18,10 @@ let visible = false;
 function toggleVisibility(){
     visible = !visible;
 }
+let myBook = new Book("The Rest of the World", "William Gomez", 390, true);
+myLibrary.push(myBook);
+myLibrary.push(new Book("Test", "Martha", 100, false));
+
 
 submitButton.addEventListener('click', function(e){
     e.preventDefault(); // Prevent form from submitting
@@ -28,17 +32,17 @@ submitButton.addEventListener('click', function(e){
 
 });
 
-readStatusButton.addEventListener('click', ()=>{
-    content.classList.add("darken");
-    formContainer.classList.add("visible");
-    setTimeout(toggleVisibility, 100);
-});
-content.addEventListener('click', ()=>{
+// readStatusButton.addEventListener('click', ()=>{
+//     content.classList.add("darken");
+//     formContainer.classList.add("visible");
+//     setTimeout(toggleVisibility, 100);
+// });
+// content.addEventListener('click', ()=>{
 
-    if (visible){
-        // TODO: add book
-    }
-});
+//     if (visible){
+//         // TODO: add book
+//     }
+// });
 /*
 <div class="leftGroove"></div>
 <h2 class="title">Title</h2>
@@ -87,12 +91,13 @@ function createDomBook(book){
     bookShelf.appendChild(bookContainer);
 }
 let awesomeBook = new Book("Green", "Charles", 90, true);
-createDomBook(awesomeBook);
-createDomBook(awesomeBook);
-createDomBook(awesomeBook);
 
 function addBookToLibrary(){
 
 };
+
+myLibrary.forEach(function(book){
+    createDomBook(book);
+});
 
 addBookToLibrary();
