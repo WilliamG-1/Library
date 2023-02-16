@@ -19,12 +19,11 @@ function Book(title, author, pages, readStatus) {
 // Form Submission Button
 
 formItself.addEventListener('submit', function(e) { 
-    e.preventDefault();
-    setTimeout(()=>{}, 4000);
+    e.preventDefault(); // Prevent page refresh
     let title = textFields[0].value;
     let author = textFields[1].value;
     let pages = pageField.value;
-    let readStatus = checkBox.checked;k
+    let readStatus = checkBox.checked;
 
     let newBook = new Book(title, author, pages, readStatus);
     myLibrary.push(newBook);
