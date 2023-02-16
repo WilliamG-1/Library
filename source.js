@@ -27,9 +27,7 @@ myLibrary.push(new Book("Test", "Martha", 100, false));
 
 submitButton.addEventListener('click', function(e){
     e.preventDefault(); // Prevent form from submitting
-   
-
-
+    
 });
 // add darken class to content, display form
 addBookButton.addEventListener('click', (e)=>{
@@ -48,26 +46,6 @@ content.addEventListener('click', ()=>{
 
 });
 
-// readStatusButton.addEventListener('click', ()=>{
-//     content.classList.add("darken");
-//     formContainer.classList.add("visible");
-//     setTimeout(toggleVisibility, 100);
-// });
-// content.addEventListener('click', ()=>{
-
-//     if (visible){
-//         // TODO: add book
-//     }
-// });
-/*
-<div class="leftGroove"></div>
-<h2 class="title">Title</h2>
-<div class="author">By: </div>
-
-<div class="footer">
-    <button type="button" class="readStatus"></button>
-    <div class="pages">320</div>
-</div>*/
 function createDomBook(book){
     // Create all elements
     let bookContainer = document.createElement("div");
@@ -106,9 +84,12 @@ function createDomBook(book){
 
     bookShelf.appendChild(bookContainer);
 }
+// Remove all content from text fields
 function resetForm(){
-    textFields.textContent = "";
-    pageField.value = 0;
+    textFields.forEach((field)=>{
+        field.value = "";
+    });
+    pageField.value = "";
     checkBox.checked = false;
 }
 let awesomeBook = new Book("Green", "Charles", 90, true);
