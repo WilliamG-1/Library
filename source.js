@@ -1,11 +1,15 @@
 const content = document.querySelector(".content");
 const bookShelf = document.querySelector(".bookshelf");
-//const readStatusButton = document.querySelector(".readStatus");
 const formContainer = document.querySelector(".formContainer");
 const submitButton = document.querySelector("#submitBook");
+const addBookButton = document.querySelector("#addBookButton");
+
+let textFields = document.querySelectorAll('input[type="text"]'); // Get title + author elements
+let pageField = document.querySelector('input[type="number"]'); // Get page element
+let checkBox = document.querySelector('input[type="checkbox"]'); // Get checkbox element
 
 let myLibrary = []; // Initialize empty array of books
-
+let visible = false; // Whether form is shown or not
 function Book(title, author, pages, readStatus) {
     this.title = title,
     this.author = author,
@@ -14,10 +18,8 @@ function Book(title, author, pages, readStatus) {
 
 };
 
-let visible = false;
-function toggleVisibility(){
-    visible = !visible;
-}
+
+
 let myBook = new Book("The Rest of the World", "William Gomez", 390, true);
 myLibrary.push(myBook);
 myLibrary.push(new Book("Test", "Martha", 100, false));
@@ -25,10 +27,24 @@ myLibrary.push(new Book("Test", "Martha", 100, false));
 
 submitButton.addEventListener('click', function(e){
     e.preventDefault(); // Prevent form from submitting
-    let textFields = document.querySelectorAll('input[type="text"]'); // Get title + author elements
-    let pageField = document.querySelector('input[type="number"]'); // Get page element
-    let checkBox = document.querySelector('input[type="checkbox"]'); // Get checkbox element
+   
 
+
+});
+// add darken class to content, display form
+addBookButton.addEventListener('click', (e)=>{
+    e.stopPropagation(); // Prevent click from "bubbling" to content parent
+    content.classList.add("darken");
+    formContainer.classList.add('visible');
+    setTimeout(()=>{ formContainer.classList.add('visible')}, 10);
+});
+content.addEventListener('click', ()=>{
+    if (formContainer.classList.contains('visible')){
+        formContainer.classList.remove('visible');
+        content.classList.remove('darken');
+        resetForm();
+        console.log("Remove")
+    }
 
 });
 
@@ -89,6 +105,11 @@ function createDomBook(book){
     bookContainer.appendChild(b_footer);
 
     bookShelf.appendChild(bookContainer);
+}
+function resetForm(){
+    textFields.textContent = "";
+    pageField.value = 0;
+    checkBox.checked = false;
 }
 let awesomeBook = new Book("Green", "Charles", 90, true);
 
