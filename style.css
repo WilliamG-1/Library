@@ -91,6 +91,7 @@ main.bookshelf{
 }
 
 .pages{
+    font-size: 1.15em;
     align-self: center;
     margin: 5px 15px;
 }
@@ -99,20 +100,25 @@ main.bookshelf{
 }
 
 .formContainer{
+    border: none;
     width: 400px;
-    background-color: red;
+    background-color: #496d8d;
     box-shadow: 0 0 8px black;
     position: fixed;
     left: 50%;
     top: -120vh;
+   
     transition: 0.8s;
     transform: translate(-50%, 0);
+    color: #ebe8e1;
+    border-radius: 5px;
 }
 fieldset{
     padding: 20px 40px;
     display: grid;
     grid-template: 2fr repeat(4, 1fr) / 1fr 3fr;
     gap: 10px;
+    border: none;
 }
 fieldset h2{
     margin: 5px;
@@ -122,6 +128,23 @@ fieldset h2{
 fieldset label{
     font-size: 1.2rem;
     justify-self: center;
+}
+fieldset input{
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px #1D2D44 solid;
+    color: #ebe8e1;
+    padding: 0 8px;
+
+}
+#submitBook{
+    border-radius: 16px;
+    padding: 4px 9px;
+    margin: 9px 0;
+    font-size: 1em;
+    grid-column: 1 / -1;
+    justify-self: center;
+    background-color: #ebe8e1;
 }
 
 /*Add this class to make form visible on screen*/
