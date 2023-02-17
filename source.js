@@ -74,7 +74,13 @@ function addBookToLibrary(book){
     let b_read = document.createElement("button");
     b_read.textContent = book.readStatus ? "Read" : "Unread";
     b_read.classList.add("readStatus");
-
+    if (book.readStatus)
+        b_read.classList.add('read');
+    b_read.addEventListener('click', ()=>{
+        b_read.classList.toggle('read');
+        book.readStatus = !book.readStatus;
+        b_read.textContent = book.readStatus ? "Read" : "Unread";
+    });
     let b_pages = document.createElement("div");
     b_pages.textContent = book.pages;
     b_pages.classList.add("pages");
@@ -103,4 +109,3 @@ let first = new Book("Guide to CSS", "Unkown", 256, true);
 myLibrary.push(first);
 addBookToLibrary(first);
 
-setTimeout(()=>{console.log("HIHIH")}, 1900);

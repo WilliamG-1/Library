@@ -1,12 +1,17 @@
+@font-face {
+    font-family: Varela;
+    src: url('Assets/VarelaRound-Regular.ttf');
+}
 * { 
     padding: 0;
     margin: 0;
-    
+    font-family: Varela;
 }
 
 .content{
     min-height: 100vh;
-    background-color: mediumaquamarine;
+    background-color: #1D2D44;
+    
 }
 
 .header {
@@ -14,36 +19,48 @@
     flex-direction: column;
     align-items: center;
     height: 80px;
-    
-    background-color: aqua;
+    box-shadow: 0 2px 2px #3E5C76;
+    background-color: #1D2D44;
+    color: #F0EBD8;
+    justify-content: center;
 }
 .button {
     
 }
+#addBookButton{
+    font-size: 1.5rem;
+    margin: 30px 0;
+    padding: 10px;
+    border-radius: 30px;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
+    background-color: #F0EBD8;
+    color: #1D2D44;
+}
 main.bookshelf{
-    padding: 40px;
-    background-color: antiquewhite;
-    border: 8px black solid;
+    padding: 60px;
+    
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 100px;
+    height: 1fr;
 }
 .book{
     max-width: 360px;
     height: 300px;
-    background-color: lightblue;
+    background-color: #3E5C76;
     box-shadow: -2px 2px 6px black;
     border-radius: 10px 4px 4px 10px;
+    
     display: grid;
     grid-template: 3fr 2fr 1fr/ 40px 1fr;
-  
+    color: #F0EBD8;
 }
-.book * {
-    border: 1px black solid;
-}
+
 .leftGroove{
     grid-row: 1 / -1;
-    background-color: rgb(152, 194, 208);
+    background-color: #1D2D44;
     border-radius: 10px 0 0 10px;
 }
 .title{
@@ -60,7 +77,6 @@ main.bookshelf{
     justify-content: space-around;
 }
 .readStatus{
-    background-color: transparent;
     font-size: 1.2em;
     display: flex;
     justify-content: center;
@@ -69,16 +85,17 @@ main.bookshelf{
     height: 80%;
     width: 60%;
     border-radius: 15px;
+    background-color: rgb(95, 13, 13);
+    color: #F0EBD8;
+    
 }
+
 .pages{
     align-self: center;
     margin: 5px 15px;
 }
-.unread{
-    background-color: red;
-}
-.read{
-    background-color: rgb(23, 184, 23);
+.read {
+    background-color: rgb(14, 161, 112);
 }
 
 .formContainer{
